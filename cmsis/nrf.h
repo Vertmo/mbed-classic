@@ -33,12 +33,8 @@
 #ifndef _WIN32
 
 /* Family selection for main includes. NRF51 must be selected. */
-#ifdef NRF51
-    #include "nrf51.h"
-    #include "nrf51_bitfields.h"
-#else
-    #error "Device family must be defined. See nrf.h."
-#endif /* NRF51 */
+#include "nrf51.h"
+#include "nrf51_bitfields.h"
 
 #include "compiler_abstraction.h"
 

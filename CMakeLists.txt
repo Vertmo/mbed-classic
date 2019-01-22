@@ -2,6 +2,8 @@
 # mbed-2 yotta-compatible build system
 #
 
+cmake_minimum_required(VERSION 3.13)
+
 # make sure necessary features are enabled:
 project(mbed-classic)
 enable_language(ASM)
