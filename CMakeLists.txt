@@ -20,7 +20,7 @@ endif()
 file(GLOB MBED_COMMON_SOURCES "common/*.cpp" "common/*.c")
 #
 # (always include the hal header directory, too)
-set(MBED_COMMON_INCLUDE_DIRS "hal" "api")
+set(MBED_COMMON_INCLUDE_DIRS "api" "hal" "cmsis")
 
 # and MBED_TARGET_SOURCES: these depend on which target we are building for. To
 # find these we need to walk the directories in targets/, and wherever we see a
@@ -32,7 +32,7 @@ macro(mbed_find_target_dirs PARENT_DIRECTORY SOURCES_LIST INCLUDES_LIST)
     # add all source files in this directory to the sources list:
     file(GLOB sources "${PARENT_DIRECTORY}/*.cpp" "${PARENT_DIRECTORY}/*.c" "${PARENT_DIRECTORY}/*.s" "${PARENT_DIRECTORY}/*.S" )
     list(APPEND ${SOURCES_LIST} ${sources})
-    
+
     # get a list of all subdirectories that we want to recurse into:
     file(GLOB dir_children RELATIVE "${PARENT_DIRECTORY}" "${PARENT_DIRECTORY}/*")
     set(matching_subdirs "")
