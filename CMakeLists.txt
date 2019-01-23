@@ -19,7 +19,11 @@ endif()
 # MBED_COMMON_SOURCES: the source files that are the same for all targets,
 # these are easily found by globbing:
 #
-file(GLOB MBED_COMMON_SOURCES "common/*.cpp" "common/*.c" "cmsis/*.c" "cmsis/*.cpp" "cmsis/*.s" "cmsis/*.S")
+file(GLOB MBED_COMMON_SOURCES
+  "common/*.cpp" "common/*.c"
+  "cmsis/*.c" "cmsis/*.cpp" "cmsis/*.s" "cmsis/*.S"
+  "hal/*.c" "hal/*.cpp"
+)
 #
 # (always include the hal header directory, too)
 set(MBED_COMMON_INCLUDE_DIRS "api")
